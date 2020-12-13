@@ -1,4 +1,5 @@
 import React, { Component } from 'react'; // let's also import Component
+import { Route, Switch } from 'react-router-dom';
 import Chart from './Chart'
 
 // Clock has no properties, but the current state is of type ClockState
@@ -82,7 +83,23 @@ export default class Content extends Component<{}, State> {
     render() {
         return (
             <div id='content'>
-                <Chart width={this.state.size.width} height={this.state.size.height} data={this.data}/>
+                <Switch>
+                    <Route exact path="/wheat-2">
+                        <Chart width={this.state.size.width} height={this.state.size.height} data={this.data}/>
+                    </Route>
+                    <Route exact path="/wheat-2">
+                        <Chart width={this.state.size.width} height={this.state.size.height} data={this.data}/>
+                    </Route>
+                    <Route exact path="/wheat-3">
+                        <Chart width={this.state.size.width} height={this.state.size.height} data={this.data}/>
+                    </Route>
+                    <Route exact path="/wheat-4">
+                        <Chart width={this.state.size.width} height={this.state.size.height} data={this.data}/>
+                    </Route>
+                    <Route exact path="/sunflowers">
+                        <Chart width={this.state.size.width} height={this.state.size.height} data={this.data}/>
+                    </Route>
+                </Switch>
             </div>
         )
     }

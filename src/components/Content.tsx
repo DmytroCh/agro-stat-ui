@@ -1,20 +1,12 @@
 import React, { Component } from 'react'; // let's also import Component
 import { Route, Switch } from 'react-router-dom';
 import Chart from './Chart'
+import { WindowSize, Crops } from '../Model/types'
+
 
 // Clock has no properties, but the current state is of type ClockState
 // The generic parameters in the Component typing allow to pass props
 // and state. Since we don't have props, we pass an empty object.
-
-type WindowSize = {
-    width: number,
-    height: number
-}
-
-type DataLine = {
-    date: string,
-    price: number
-  };
 
 interface State {
     size: WindowSize
@@ -26,42 +18,10 @@ export default class Content extends Component<{}, State> {
             width: 0,
             height: 0
         }
-    }
+    }    
     
-    private data:Array<DataLine> = [
-        {
-            "date": "10-12-2014",
-            "price": 2100
-        },
-        {
-            "date": "10-12-2015",
-            "price": 2000
-        },
-        {
-            "date": "10-12-2016",
-            "price": 1700
-        },
-        {
-            "date": "10-12-2017",
-            "price": 2100
-        },
-        {
-            "date": "10-12-2018",
-            "price": 2500
-        },
-        {
-            "date": "10-12-2019",
-            "price": 2650
-        },
-        {
-            "date": "10-12-2020",
-            "price": 2400
-        }
-    ]
-
     updateWindowSize():void {
         const parent = document.getElementById('content');
-        const maxHeight = 
         this.setState(function (prevState){
             return { size: {
                 width: parent ? parent.clientWidth : prevState.size.width,
@@ -84,20 +44,20 @@ export default class Content extends Component<{}, State> {
         return (
             <div id='content'>
                 <Switch>
-                    <Route exact path="/wheat-2">
-                        <Chart width={this.state.size.width} height={this.state.size.height} data={this.data}/>
+                    <Route exact path="/">
+
                     </Route>
                     <Route exact path="/wheat-2">
-                        <Chart width={this.state.size.width} height={this.state.size.height} data={this.data}/>
+                        <Chart windowSize={this.state.size} crop={Crops.Wheat2}/>
                     </Route>
                     <Route exact path="/wheat-3">
-                        <Chart width={this.state.size.width} height={this.state.size.height} data={this.data}/>
+                        <Chart windowSize={this.state.size} crop={Crops.Wheat3}/>
                     </Route>
                     <Route exact path="/wheat-4">
-                        <Chart width={this.state.size.width} height={this.state.size.height} data={this.data}/>
+                        <Chart windowSize={this.state.size} crop={Crops.Wheat4}/>
                     </Route>
                     <Route exact path="/sunflowers">
-                        <Chart width={this.state.size.width} height={this.state.size.height} data={this.data}/>
+                        <Chart windowSize={this.state.size} crop={Crops.Wheat4}/>
                     </Route>
                 </Switch>
             </div>

@@ -1,7 +1,7 @@
 import { Component } from 'react'; // let's also import Component
 import {CartesianGrid, Line, LineChart, Tooltip, XAxis, YAxis} from 'recharts'
 import {getChartData} from '../Model/requests'
-import {DataLine, ChartData, Crops} from '../Model/types'
+import {DataLine, ChartData, Crop} from '../Model/types'
 
 // Clock has no properties, but the current state is of type ClockState
 // The generic parameters in the Component typing allow to pass props
@@ -16,9 +16,10 @@ export default class Chart extends Component<ChartData, State> {
         data: []
     }
 
-    updateChartData(crop: Crops):void {        
-        this.setState(function (prevState){
-            return {data: getChartData(crop)}
+    async updateChartData(crop: Crop):Promise<void> {    
+        const response = await getChartData(crop);
+        this.setState((prevState) => {
+            return {data: response}
         })
     }
 

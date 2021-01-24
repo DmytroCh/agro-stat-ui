@@ -1,48 +1,19 @@
 import axios from 'axios'
-import { Crops, DataLine } from './types'
+import { responseToChartData } from './dataForCharts';
+import { Crop, DataLine } from './types'
 
-const SERVER_URL = ''
+const SERVER_URL = 'http://localhost:8080'
 
-export function getChartData(crop: Crops): Array<DataLine> {
-    /*axios.get(`${SERVER_URL}/crop`, {
-        params: {
-            crop: crop
-        }
-    })
-        .then(function (response) {
-            console.log(response);
-        })
-        .catch(function (error) {
-            console.log(error);
-        })*/
-    return [
-        {
-            "date": "10-12-2014",
-            "price": 2100
-        },
-        {
-            "date": "10-12-2015",
-            "price": 2000
-        },
-        {
-            "date": "10-12-2016",
-            "price": 1700
-        },
-        {
-            "date": "10-12-2017",
-            "price": 2100
-        },
-        {
-            "date": "10-12-2018",
-            "price": 2500
-        },
-        {
-            "date": "10-12-2019",
-            "price": 2650
-        },
-        {
-            "date": "10-12-2020",
-            "price": 2400
-        }
-    ]
+export async function getChartData(crop: Crop): Promise<Array<DataLine>> {
+    try{
+        const response = await axios.get(`${SERVER_URL}/prices`, {
+            params: {
+                crop: crop
+            }
+        });
+        return responseToChartData(response.data);
+    }catch(e){
+        console.log(e);
+        throw Error("Something went wrong with request for data.");
+    }
 }

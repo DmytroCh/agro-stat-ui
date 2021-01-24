@@ -1,5 +1,4 @@
 import React, { Component, MouseEvent } from 'react'; // let's also import Component
-import { Link } from 'react-router-dom';
 import { Dropdown, DropdownItemProps, Menu, MenuItemProps, Segment } from 'semantic-ui-react'
 
 // Clock has no properties, but the current state is of type ClockState
@@ -64,6 +63,41 @@ export default class Header extends Component<{}> {
 								text='Sunflowers'
 								href="/sunflowers"
 								active={activeItem === 'sunflowers'}
+								onClick={this.handleDropdownItemClick}
+							/>
+							<Dropdown.Item
+								name='rye'
+								text='Rye'
+								href="/rye"
+								active={activeItem === 'rye'}
+								onClick={this.handleDropdownItemClick}
+							/>
+							<Dropdown.Item
+								name='corn'
+								text='Corn'
+								href="/corn"
+								active={activeItem === 'corn'}
+								onClick={this.handleDropdownItemClick}
+							/>
+							<Dropdown.Item
+								name='barley'
+								text='Barley'
+								href="/barley"
+								active={activeItem === 'barley'}
+								onClick={this.handleDropdownItemClick}
+							/>
+							<Dropdown.Item
+								name='soybean'
+								text='Soybean'
+								href="/soybean"
+								active={activeItem === 'soybean'}
+								onClick={this.handleDropdownItemClick}
+							/>
+							<Dropdown.Item
+								name='buckwheat'
+								text='Buckwheat'
+								href="/buckwheat"
+								active={activeItem === 'buckwheat'}
 								onClick={this.handleDropdownItemClick}
 							/>
 						</Dropdown.Menu>

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'; // let's also import Component
 import { Route, Switch } from 'react-router-dom';
 import Chart from './Chart'
-import { WindowSize, Crops } from '../Model/types'
+import { WindowSize, Crop } from '../Model/types'
 
 
 // Clock has no properties, but the current state is of type ClockState
@@ -48,16 +48,31 @@ export default class Content extends Component<{}, State> {
 
                     </Route>
                     <Route exact path="/wheat-2">
-                        <Chart windowSize={this.state.size} crop={Crops.Wheat2}/>
+                        <Chart windowSize={this.state.size} crop={Crop.wheat2}/>
                     </Route>
                     <Route exact path="/wheat-3">
-                        <Chart windowSize={this.state.size} crop={Crops.Wheat3}/>
+                        <Chart windowSize={this.state.size} crop={Crop.wheat3}/>
                     </Route>
                     <Route exact path="/wheat-4">
-                        <Chart windowSize={this.state.size} crop={Crops.Wheat4}/>
+                        <Chart windowSize={this.state.size} crop={Crop.wheat4}/>
                     </Route>
                     <Route exact path="/sunflowers">
-                        <Chart windowSize={this.state.size} crop={Crops.Wheat4}/>
+                        <Chart windowSize={this.state.size} crop={Crop.sunflower}/>
+                    </Route>
+                    <Route exact path="/rye">
+                        <Chart windowSize={this.state.size} crop={Crop.rye}/>
+                    </Route>
+                    <Route exact path="/corn">
+                        <Chart windowSize={this.state.size} crop={Crop.corn}/>
+                    </Route>
+                    <Route exact path="/barley">
+                        <Chart windowSize={this.state.size} crop={Crop.barley}/>
+                    </Route>
+                    <Route exact path="/soybean">
+                        <Chart windowSize={this.state.size} crop={Crop.soybean}/>
+                    </Route>
+                    <Route exact path="/buckwheat">
+                        <Chart windowSize={this.state.size} crop={Crop.buckwheat}/>
                     </Route>
                 </Switch>
             </div>

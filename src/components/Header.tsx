@@ -37,18 +37,21 @@ export default class Header extends Component<{}> {
 										<Dropdown.Item
 											name='2-nd-class'
 											text='2-nd Class'
+											href='/wheat-2'
 											active={activeItem === '2-nd-class'}
 											onClick={this.handleDropdownItemClick}
 										/>
 										<Dropdown.Item
 											name='3-rd-class'
 											text='3-rd Class'
+											href="/wheat-3"
 											active={activeItem === '3-rd-class'}
 											onClick={this.handleDropdownItemClick}
 										/>
 										<Dropdown.Item
 											name='4-th-class'
 											text='4-th Class'
+											href="/wheat-4"
 											active={activeItem === '4-th-class'}
 											onClick={this.handleDropdownItemClick}
 										/>
@@ -58,7 +61,43 @@ export default class Header extends Component<{}> {
 							<Dropdown.Item
 								name='sunflowers'
 								text='Sunflowers'
+								href="/sunflowers"
 								active={activeItem === 'sunflowers'}
+								onClick={this.handleDropdownItemClick}
+							/>
+							<Dropdown.Item
+								name='rye'
+								text='Rye'
+								href="/rye"
+								active={activeItem === 'rye'}
+								onClick={this.handleDropdownItemClick}
+							/>
+							<Dropdown.Item
+								name='corn'
+								text='Corn'
+								href="/corn"
+								active={activeItem === 'corn'}
+								onClick={this.handleDropdownItemClick}
+							/>
+							<Dropdown.Item
+								name='barley'
+								text='Barley'
+								href="/barley"
+								active={activeItem === 'barley'}
+								onClick={this.handleDropdownItemClick}
+							/>
+							<Dropdown.Item
+								name='soybean'
+								text='Soybean'
+								href="/soybean"
+								active={activeItem === 'soybean'}
+								onClick={this.handleDropdownItemClick}
+							/>
+							<Dropdown.Item
+								name='buckwheat'
+								text='Buckwheat'
+								href="/buckwheat"
+								active={activeItem === 'buckwheat'}
 								onClick={this.handleDropdownItemClick}
 							/>
 						</Dropdown.Menu>

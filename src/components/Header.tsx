@@ -1,7 +1,7 @@
 import React, { Component, MouseEvent } from 'react'; // let's also import Component
-import { Dropdown, DropdownItemProps, Flag, Menu, MenuItemProps, Segment } from 'semantic-ui-react';
+import { Dropdown, DropdownItemProps, Flag, FlagNameValues, Menu, MenuItemProps, Segment } from 'semantic-ui-react';
 import i18n from '../i18n';
-
+import { SupportedLanguages } from '../Model/types';
 
 interface Props {
 	t: any
@@ -12,14 +12,21 @@ interface Props {
 export default class Header extends Component<Props> {
 	state = { 
 		activeItem: 'home',
+		activeLanguage: SupportedLanguages.en
 	}
 
 	// Before the component mounts, we initialise our state
 	componentWillMount() {
+		const detectedLanguage = i18n.language
+		if (detectedLanguage in SupportedLanguages)
+			this.setState({activeLanguage: detectedLanguage})
+		else
+			this.setState({activeLanguage: SupportedLanguages.en})
 	}
 
 	// After the component did mount, we set the state each second.
 	componentDidMount() {
+
 	}
 
 	handleMenuItemClick = (e: MouseEvent, { name }: MenuItemProps) => {
@@ -30,7 +37,12 @@ export default class Header extends Component<Props> {
 	}
 	
 	handleDropdownLanguageItemClick = (e: MouseEvent, { name }: DropdownItemProps) => {
+		this.setState({activeLanguage: name})
 		i18n.changeLanguage(name)
+	}
+
+	getActiveLanguage = (): FlagNameValues => {
+		return this.state.activeLanguage as FlagNameValues
 	}
 
 	render() {
@@ -126,7 +138,7 @@ export default class Header extends Component<Props> {
 					>
 						<Dropdown
 						pointing
-						icon={ <Flag name='pl' /> }
+						icon={ <Flag name={ this.getActiveLanguage() } /> }
 						className='link item'
 						>
 							<Dropdown.Menu>

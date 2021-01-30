@@ -42,3 +42,10 @@ export type ChartData = {
     windowSize: WindowSize
     crop: Crop
 }
+
+export enum SupportedLanguages {
+    en = "gb",
+    ua = "ua",
+    ru = "ru",
+    pl = "pl"
+}

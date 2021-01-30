@@ -47,3 +47,4 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 
 ## Multilanguage
 https://medium.com/@ricklee_10931/react-multi-lingual-with-react-i18next-57879f986168
+https://www.i18next.com/overview/api

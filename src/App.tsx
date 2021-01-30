@@ -1,4 +1,4 @@
-import Header from './components/Header'
+import Header from './components/Header/Header'
 import Content from './components/Content'
 import './i18n'
 import { useTranslation } from 'react-i18next';

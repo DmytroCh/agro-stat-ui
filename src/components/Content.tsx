@@ -1,7 +1,8 @@
 import React, { Component } from 'react'; // let's also import Component
 import { Route, Switch } from 'react-router-dom';
-import Chart from './Chart'
-import { WindowSize, Crop } from '../Model/types'
+import Chart from './Chart';
+import { WindowSize, Crop } from '../Model/types';
+
 
 
 // Clock has no properties, but the current state is of type ClockState

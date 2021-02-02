@@ -15,14 +15,37 @@ code {
     monospace;
 }
 
-#root{
+#root {
   height: 100vh;
   width: 100vw;
+
   .app {
     height: 100%;
     width: 100%;
-    #content{
+
+    #content {
       height: calc(100vh - #{$nav_height});
     }
   }
+}
+
+// override Semantic UI
+div.ui.inverted.segment {
+  border-radius: 0;
+  padding: 7px;
+  margin: 0;
+}
+
+// override Semantic UI
+.right.item {
+  padding: 0 !important;
+}
+
+// override Semantic UI
+.right.item > div {
+  margin: 0 !important;
+}
+
+.flag {
+  margin: 0 !important;
 }

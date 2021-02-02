@@ -1,0 +1,30 @@
+version: "3.2"
+services:
+  agro-stat-api:
+    build:
+      context: https://github.com/DmytroCh/agro-stat-server.git#main
+    ports:
+      - "3003:3003"
+    depends_on: 
+      - "db"
+  agro-stat-ui:
+    build:
+      context: https://github.com/DmytroCh/agro-stat-ui.git#mian
+    depends_on:
+      - agro-stat-api
+    ports:
+      - "3002:3002"
+  db:
+    image: postgres
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: postgres
+
+volumes:
+  db-data:
+    driver: local

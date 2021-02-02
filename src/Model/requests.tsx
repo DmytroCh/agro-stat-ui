@@ -2,7 +2,15 @@ import axios from 'axios'
 import { responseToChartData } from './dataForCharts';
 import { Crop, DataLine } from './types'
 
-const SERVER_URL = 'http://localhost:8080'
+declare global {
+    interface Window {
+        _env_:any;
+    }
+}
+
+const env = window._env_;
+const SERVER_URL = env ? env.API_URL : "http://localhost:3003"
+
 
 export async function getChartData(crop: Crop): Promise<Array<DataLine>> {
     try{

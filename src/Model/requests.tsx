@@ -13,8 +13,9 @@ const SERVER_URL = env ? env.API_URL : "http://localhost:3003"
 
 
 export async function getChartData(crop: Crop): Promise<Array<DataLine>> {
+    console.log("This is window._env_", SERVER_URL)
     try{
-        const response = await axios.get(`${SERVER_URL}/prices`, {
+        const response = await axios.get(`http://localhost:3003/prices`, {
             params: {
                 crop: crop
             }

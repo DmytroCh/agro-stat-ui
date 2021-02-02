@@ -22,7 +22,12 @@ COPY conf /etc/nginx
 # Static build
 COPY --from=builder /app/build /usr/share/nginx/html/
 
-EXPOSE 3003
+EXPOSE 3002
+
+# Copy .env file and shell script to container
+WORKDIR /usr/share/nginx/html
+COPY ./env.sh .
+COPY .env .
 
 # Add bash
 RUN apk add --no-cache bash

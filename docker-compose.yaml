@@ -2,14 +2,14 @@ version: "3.2"
 services:
   agro-stat-api:
     build:
-      context: https://github.com/DmytroCh/agro-stat-server.git#main
+      context: https://github.com/DmytroCh/agro-stat-server.git#docker
     ports:
       - "3003:3003"
     depends_on: 
       - "db"
   agro-stat-ui:
     build:
-      context: https://github.com/DmytroCh/agro-stat-ui.git#mian
+      context: https://github.com/DmytroCh/agro-stat-ui.git#docker
     depends_on:
       - agro-stat-api
     ports:

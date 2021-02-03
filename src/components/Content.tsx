@@ -1,7 +1,9 @@
 import React, { Component } from 'react'; // let's also import Component
-import { Route, Switch } from 'react-router-dom';
+import { Redirect, Route, Switch } from 'react-router-dom';
 import Chart from './Chart';
 import { WindowSize, Crop } from '../Model/types';
+import AboutUs from './AboutUs/AboutUs';
+import { TFunction } from 'react-i18next';
 
 
 
@@ -13,7 +15,11 @@ interface State {
     size: WindowSize
 }
 
-export default class Content extends Component<{}, State> {
+interface Props {
+    t: TFunction
+}
+
+export default class Content extends Component<Props, State> {
     state = {
         size: {
             width: 0,
@@ -46,7 +52,10 @@ export default class Content extends Component<{}, State> {
             <div id='content'>
                 <Switch>
                     <Route exact path="/">
-
+                        <Redirect to="/about-us" />
+                    </Route>
+                    <Route exact path="/about-us">
+                        <AboutUs t={ this.props.t }/>
                     </Route>
                     <Route exact path="/wheat-2">
                         <Chart windowSize={this.state.size} crop={Crop.wheat2}/>

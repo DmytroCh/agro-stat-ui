@@ -11,5 +11,13 @@
     "corn": "Kukurydza",
     "barley": "Jęczmień",
     "soybean": "Soja",
-    "buckwheat": "Gryka"
+    "buckwheat": "Gryka",
+    "title1": "Co robimy?",
+    "text1": "Zajmujemy się wizualizacją danych statystycznych związanych z rolnictwem",
+    "title2": "Dlaczego to robimy?",
+    "text2": "Chcemy ułatwić życie rolników! Wizualizacja danych jest istotną częścią podejmowania decyzji. Sprzedawać albo nie nie sprzedawać oto jest pytanie... I kiedy!",
+    "title3": "Kim jesteśmy?",
+    "text3": "Jesteśmy kimś kto chce Ci pomóc zwiększyć twoje zyski!",
+    "title4": "Skąd są dane?",
+    "text4": "Pobieramy dane z oficjalnej strony urzędu statystycznego Ukrainy: https://agro.me.gov.ua/"
 }

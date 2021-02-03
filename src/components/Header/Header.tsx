@@ -60,8 +60,9 @@ export default class Header extends Component<Props> {
 						updateActiveItem={ this.handleDropdownItemClick }
 					/>
 					<Menu.Item
-						name='about us'
-						active={activeItem === 'about us'}
+						name='about-us'
+						active={activeItem === 'about-us'}
+						href="/about-us"
 						onClick={this.handleMenuItemClick}
 					>
 						{ t('about_us') }

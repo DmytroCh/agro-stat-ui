@@ -6,6 +6,7 @@ import image_scrapping from '../../images/cloud-computing.svg'
 import i18n from '../../i18n';
 import { SupportedLanguages } from '../../Model/types';
 import { TFunction } from 'react-i18next';
+import Block, { Position } from './Block';
 
 
 interface State {
@@ -32,50 +33,34 @@ export default class AboutUs extends Component<Props, State> {
     render() {
         return (
             <div id='about-us'>
-                <div className='row odd'>
-                    <img src={image_graph} alt="Graph" />
-                    <div className='text-box'>
-                        <h2 className='title'>
-                            {this.props.t('title1')}
-                        </h2>
-                        <span>
-                            {this.props.t('text1')}
-                        </span>
-                    </div>
-                </div>
-                <div className='row even'>
-                    <div className='text-box'>
-                        <h2 className='title'>
-                            {this.props.t('title2')}
-                        </h2>
-                        <span>
-                            {this.props.t('text2')}
-                        </span>
-                    </div>
-                    <img src={image_analysis} alt="Analysis" />
-                </div>
-                <div className='row odd'>
-                    <img src={image_group} alt="Group" />
-                    <div className='text-box'>
-                        <h2 className='title'>
-                            {this.props.t('title3')}
-                        </h2>
-                        <span>
-                            {this.props.t('text3')}
-                        </span>
-                    </div>
-                </div>
-                <div className='row even'>
-                    <div className='text-box'>
-                        <h2 className='title'>
-                            {this.props.t('title4')}
-                        </h2>
-                        <span>
-                            {this.props.t('text4')}
-                        </span>
-                    </div>
-                    <img src={image_scrapping} alt="Scraping icon" />
-                </div>
+                <Block 
+                    position={ Position.left }
+                    title={ this.props.t('title1') }
+                    image={ image_graph }
+                    alt="Graph"
+                    text={ this.props.t('text1') }
+                />
+                <Block 
+                    position={ Position.right }
+                    title={ this.props.t('title2') }
+                    image={ image_analysis }
+                    alt="Analysis"
+                    text={ this.props.t('text2') }
+                />
+                <Block 
+                    position={ Position.left }
+                    title={ this.props.t('title3') }
+                    image={ image_group }
+                    alt="Group"
+                    text={ this.props.t('text3') }
+                />
+                <Block 
+                    position={ Position.right }
+                    title={ this.props.t('title4') }
+                    image={ image_scrapping }
+                    alt="Scraping icon"
+                    text={ this.props.t('text4') }
+                />
             </div>
         )
     }

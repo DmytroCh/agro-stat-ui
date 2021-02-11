@@ -11,5 +11,13 @@
     "corn": "Corn",
     "barley": "Barley",
     "soybean": "Soybean",
-    "buckwheat": "Buckwheat"
+    "buckwheat": "Buckwheat",
+    "title1": "What we do?",
+    "text1": "We vizualize ukrainian agricultural statistic",
+    "title2": "Why we do?",
+    "text2": "We would like to make farmers life easier! Data vizualization is an important part in decision making. To sell, or not to sell - that is the question... And when!",
+    "title3": "Who we are?",
+    "text3": "We are someonce who want to increase yours incomes!",
+    "title4": "Where data comes from?",
+    "text4": "We pull data from official ukrainian goverment statistic portal : https://agro.me.gov.ua/"
 }

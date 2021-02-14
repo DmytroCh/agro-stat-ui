@@ -2,7 +2,7 @@ import axios from 'axios'
 import { responseToChartData } from './dataForCharts';
 import { Crop, DataLine } from './types'
 
-const SERVER_URL = 'http://localhost:8080'
+const SERVER_URL = 'http://vmi473672.contaboserver.net:8080'
 
 export async function getChartData(crop: Crop): Promise<Array<DataLine>> {
     try{

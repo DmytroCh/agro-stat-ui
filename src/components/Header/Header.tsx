@@ -7,7 +7,7 @@ import { MenuCharts } from './MenuCharts';
 import { MenuLanguages } from './MenuLanguages';
 
 interface Props {
-	t: TFunction
+	i18n: TFunction
 }
 // Clock has no properties, but the current state is of type ClockState
 // The generic parameters in the Component typing allow to pass props
@@ -25,11 +25,6 @@ export default class Header extends Component<Props> {
 			this.setState({activeLanguage: detectedLanguage})
 		else
 			this.setState({activeLanguage: SupportedLanguages.en})
-	}
-
-	// After the component did mount, we set the state each second.
-	componentDidMount() {
-
 	}
 
 	handleMenuItemClick = (e: MouseEvent, { name }: MenuItemProps) => {
@@ -50,12 +45,12 @@ export default class Header extends Component<Props> {
 
 	render() {
 		const { activeItem } = this.state
-		const { t } = this.props
+		const { i18n } = this.props
 		return (
 			<Segment inverted>
 				<Menu inverted secondary>
 					<MenuCharts 
-						t={ t } 
+						t={ i18n } 
 						activeItem={ this.state.activeItem } 
 						updateActiveItem={ this.handleDropdownItemClick }
 					/>
@@ -65,7 +60,7 @@ export default class Header extends Component<Props> {
 						href="/about-us"
 						onClick={this.handleMenuItemClick}
 					>
-						{ t('about_us') }
+						{ i18n('about_us') }
 					</ Menu.Item>
 					<Menu.Item
 						name='language'

@@ -40,7 +40,7 @@ export type WindowSize = {
 
 export type ChartData = {
     windowSize: WindowSize
-    crop: Crop
+    cropName: Crop
 }
 
 export enum SupportedLanguages {

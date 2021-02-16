@@ -4,7 +4,7 @@ import { Crop, DataLine } from './types'
 
 const SERVER_URL = 'http://vmi473672.contaboserver.net:8080'
 
-export async function getChartData(crop: Crop): Promise<Array<DataLine>> {
+export async function getChartData(crop: Crop): Promise<DataLine[]> {
     try{
         const response = await axios.get(`${SERVER_URL}/prices`, {
             params: {

@@ -5,8 +5,8 @@ import { useTranslation } from 'react-i18next';
 function App() {
   return (
     <div className="app">
-      <Header t={ useTranslation().t }/>
-      <Content t={ useTranslation().t }/>
+      <Header i18n={ useTranslation().t }/>
+      <Content i18n={ useTranslation().t }/>
     </div>
   );
 }

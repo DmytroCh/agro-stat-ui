@@ -12,12 +12,12 @@
     "barley": "Jęczmień",
     "soybean": "Soja",
     "buckwheat": "Gryka",
-    "title1": "Co robimy?",
-    "text1": "Zajmujemy się wizualizacją danych statystycznych związanych z rolnictwem",
-    "title2": "Dlaczego to robimy?",
-    "text2": "Chcemy ułatwić życie rolników! Wizualizacja danych jest istotną częścią podejmowania decyzji. Sprzedawać albo nie nie sprzedawać oto jest pytanie... I kiedy!",
-    "title3": "Kim jesteśmy?",
-    "text3": "Jesteśmy kimś kto chce Ci pomóc zwiększyć twoje zyski!",
-    "title4": "Skąd są dane?",
-    "text4": "Pobieramy dane z oficjalnej strony urzędu statystycznego Ukrainy: https://agro.me.gov.ua/"
+    "block_1_title": "Co robimy?",
+    "block_1_text": "Zajmujemy się wizualizacją danych statystycznych związanych z rolnictwem",
+    "block_2_title": "Dlaczego to robimy?",
+    "block_2_text": "Chcemy ułatwić życie rolników! Wizualizacja danych jest istotną częścią podejmowania decyzji. Sprzedawać albo nie nie sprzedawać oto jest pytanie... I kiedy!",
+    "block_3_title": "Kim jesteśmy?",
+    "block_3_text": "Jesteśmy kimś kto chce Ci pomóc zwiększyć twoje zyski!",
+    "block_4_title": "Skąd są dane?",
+    "block_4_text": "Pobieramy dane z oficjalnej strony urzędu statystycznego Ukrainy: https://agro.me.gov.ua/"
 }

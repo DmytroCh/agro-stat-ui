@@ -12,12 +12,12 @@
     "barley": "Barley",
     "soybean": "Soybean",
     "buckwheat": "Buckwheat",
-    "title1": "What we do?",
-    "text1": "We vizualize ukrainian agricultural statistic",
-    "title2": "Why we do?",
-    "text2": "We would like to make farmers life easier! Data vizualization is an important part in decision making. To sell, or not to sell - that is the question... And when!",
-    "title3": "Who we are?",
-    "text3": "We are someonce who want to increase yours incomes!",
-    "title4": "Where data comes from?",
-    "text4": "We pull data from official ukrainian goverment statistic portal : https://agro.me.gov.ua/"
+    "block_1_title": "What we do?",
+    "block_1_text": "We vizualize ukrainian agricultural statistic",
+    "block_2_title": "Why we do?",
+    "block_2_text": "We would like to make farmers life easier! Data vizualization is an important part in decision making. To sell, or not to sell - that is the question... And when!",
+    "block_3_title": "Who we are?",
+    "block_3_text": "We are someonce who want to increase yours incomes!",
+    "block_4_title": "Where data comes from?",
+    "block_4_text": "We pull data from official ukrainian goverment statistic portal : https://agro.me.gov.ua/"
 }

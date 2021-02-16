@@ -1,7 +1,9 @@
+import '../css/loading.scss';
+
 const LoadingScreen = () => {
 
   return (
-    <div id="loading-screen">  
+    <div className="loading-screen">  
         <span>↓</span>
         <span className="one">↓</span>
         <span className="two">↓</span>

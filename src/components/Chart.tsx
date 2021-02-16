@@ -1,14 +1,14 @@
 import { Component } from 'react'; // let's also import Component
-import {CartesianGrid, Line, LineChart, Tooltip, XAxis, YAxis} from 'recharts'
-import {getChartData} from '../Model/requests'
-import {DataLine, ChartData, Crop} from '../Model/types'
+import { CartesianGrid, Line, LineChart, Tooltip, XAxis, YAxis } from 'recharts'
+import { getChartData } from '../Model/requests'
+import { DataLine, ChartData, Crop } from '../Model/types'
 
 // Clock has no properties, but the current state is of type ClockState
 // The generic parameters in the Component typing allow to pass props
 // and state. Since we don't have props, we pass an empty object.
 
 interface State {
-    data:Array<DataLine>
+    data:DataLine[]
 }
 
 export default class Chart extends Component<ChartData, State> {
@@ -16,20 +16,16 @@ export default class Chart extends Component<ChartData, State> {
         data: []
     }
 
+    // Before the component mounts, we initialise our state
+    componentWillMount() {
+        this.updateChartData(this.props.cropName)
+    }
+
     async updateChartData(crop: Crop):Promise<void> {    
         const response = await getChartData(crop);
         this.setState((prevState) => {
             return {data: response}
         })
-    }
-
-    // Before the component mounts, we initialise our state
-    componentWillMount() {
-        this.updateChartData(this.props.crop)
-    }
-
-    // After the component did mount, we set the state each second.
-    componentDidMount() {
     }
 
     render() {

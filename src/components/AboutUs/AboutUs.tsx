@@ -14,7 +14,7 @@ interface State {
 }
 
 interface Props {
-    t: TFunction
+    i18n: TFunction
 }
 
 export default class AboutUs extends Component<Props, State> {
@@ -22,44 +22,36 @@ export default class AboutUs extends Component<Props, State> {
         activeLanguage: i18n.language as SupportedLanguages
     }
 
-    componentDidMount() {
-
-    }
-
-    componentWillUnmount() {
-
-    }
-
     render() {
         return (
             <div id='about-us'>
                 <Block 
                     position={ Position.left }
-                    title={ this.props.t('title1') }
+                    title={ this.props.i18n('block_1_title') }
                     image={ image_graph }
                     alt="Graph"
-                    text={ this.props.t('text1') }
+                    text={ this.props.i18n('block_1_text') }
                 />
                 <Block 
                     position={ Position.right }
-                    title={ this.props.t('title2') }
+                    title={ this.props.i18n('block_2_title') }
                     image={ image_analysis }
                     alt="Analysis"
-                    text={ this.props.t('text2') }
+                    text={ this.props.i18n('block_2_text') }
                 />
                 <Block 
                     position={ Position.left }
-                    title={ this.props.t('title3') }
+                    title={ this.props.i18n('block_3_title') }
                     image={ image_group }
                     alt="Group"
-                    text={ this.props.t('text3') }
+                    text={ this.props.i18n('block_3_text') }
                 />
                 <Block 
                     position={ Position.right }
-                    title={ this.props.t('title4') }
+                    title={ this.props.i18n('block_4_title') }
                     image={ image_scrapping }
                     alt="Scraping icon"
-                    text={ this.props.t('text4') }
+                    text={ this.props.i18n('block_4_text') }
                 />
             </div>
         )

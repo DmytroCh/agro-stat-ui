@@ -1,0 +1,15 @@
+#about-us {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    column-gap: 20px;
+    row-gap: 50px;
+    padding: 50px;
+}
+
+@media only screen and (max-width: 800px) {
+    #about-us {
+        row-gap: 20px;
+        padding: 20px;
+    }
+}

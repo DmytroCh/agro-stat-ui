@@ -1,0 +1,9 @@
+@media only screen and (max-width: 800px) {
+    .row {
+        grid-column: 1 / -1 !important;
+        height: auto !important;
+        img {
+            display: none !important;
+        }
+    }
+}

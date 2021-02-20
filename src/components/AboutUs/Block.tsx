@@ -1,3 +1,6 @@
+import './Block.scss'
+import './Block_mobile.scss'
+
 interface Props {
     position: Position,
     title: string,

@@ -1,3 +1,4 @@
+import './MenuLanguages.scss';
 import React, { MouseEvent } from 'react'; // we need this to make JSX compile
 import { Dropdown, DropdownItemProps, Flag, FlagNameValues } from 'semantic-ui-react';
 import { SupportedLanguages } from '../../Model/types';

@@ -1,10 +1,11 @@
+import './Content.scss';
+
 import React, { Component } from 'react'; // let's also import Component
 import { Redirect, Route, Switch } from 'react-router-dom';
 import Chart from './Chart';
 import { WindowSize, Crop } from '../Model/types';
 import AboutUs from './AboutUs/AboutUs';
 import { TFunction } from 'react-i18next';
-
 
 
 // Clock has no properties, but the current state is of type ClockState

@@ -1,0 +1,6 @@
+/* heigh of semantic ui menu. Is it correct? */
+$nav_height: 6rem;
+
+#content {
+    height: calc(100vh - #{$nav_height});
+}

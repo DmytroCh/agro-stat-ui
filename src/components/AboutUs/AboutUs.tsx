@@ -1,3 +1,5 @@
+import './AboutUs.scss';
+
 import React, { Component } from 'react';
 import image_analysis from '../../images/analysis.svg'
 import image_graph from '../../images/graph.svg'

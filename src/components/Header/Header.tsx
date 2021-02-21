@@ -1,3 +1,4 @@
+import './Header.scss';
 import { TFunction } from 'i18next';
 import React, { Component, MouseEvent } from 'react'; // let's also import Component
 import { DropdownItemProps, FlagNameValues, Menu, MenuItemProps, Segment } from 'semantic-ui-react';

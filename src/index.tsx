@@ -1,12 +1,11 @@
+import 'semantic-ui-css/semantic.min.css';
+import './index.scss';
+
 import React, { Suspense } from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from "react-router-dom";
-
-import 'semantic-ui-css/semantic.min.css'
-import './css/index.scss';
-
 import App from './App';
-import LoadingScreen from './components/LoadingScreen';
+import LoadingScreen from './components/LoadingScreen/LoadingScreen';
 
 
 ReactDOM.render(

@@ -1,8 +1,9 @@
 import axios from 'axios'
-import { responseToChartData } from './dataForCharts';
-import { Crop, DataLine } from './types'
+import { currencyToChartData, responseToChartData } from './dataForCharts';
+import { Crop, Currency, DataLine } from './types'
 
 const SERVER_URL = 'http://vmi473672.contaboserver.net:8080'
+const BANK_SERVER_URL = 'https://bank.gov.ua'
 
 export async function getChartData(crop: Crop): Promise<DataLine[]> {
     try{
@@ -13,7 +14,30 @@ export async function getChartData(crop: Crop): Promise<DataLine[]> {
         });
         return responseToChartData(response.data);
     }catch(e){
-        console.log(e);
+        console.error(e);
         throw Error("Something went wrong with request for data.");
     }
+}
+
+export async function getExchangeRate(response: DataLine[], currency: Currency): Promise<DataLine[]> {
+    // API docs: https://bank.gov.ua/ua/open-data/api-dev
+    // There is no option to reqest exchange rate for multiple dates
+    
+    const promises = response.map(async data => {
+        try{
+            const res = await axios.get(`${BANK_SERVER_URL}/NBUStatService/v1/statdirectory/exchange?json`, {
+                params: {
+                    valcode: currency,
+                    date: data.date.replaceAll('-','')
+                }
+            });
+            return currencyToChartData(res.data, data);
+        }catch(e){
+            console.error(e);
+            throw Error("Something went wrong with request for exchange rate.");
+        }
+    });
+    const result = await Promise.all(promises);
+    return result;
+        
 }

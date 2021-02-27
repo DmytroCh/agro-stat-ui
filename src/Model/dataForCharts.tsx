@@ -1,4 +1,4 @@
-import { DataLine, Price } from "./types";
+import { CurrencyResponseItem, DataLine, Price } from "./types";
 
 export const responseToChartData = (response: Price[]): DataLine[] => {
     const result: DataLine[] = [];
@@ -9,4 +9,12 @@ export const responseToChartData = (response: Price[]): DataLine[] => {
         });
     }
     return result;
+};
+
+export const currencyToChartData = (currencyResponse: CurrencyResponseItem[], priceResponse: DataLine): DataLine => {
+    const usdPrice = Math.round(priceResponse.price * 100 / currencyResponse[0].rate) / 100;
+    return {
+        date: priceResponse.date,
+        price: usdPrice
+    };
 };

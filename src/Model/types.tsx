@@ -17,7 +17,16 @@ export enum Country {
 
 // In ISO4217 standard
 export enum Currency {
-    UAH = "UAH"
+    UAH = "UAH",
+    USD = "USD"
+}
+
+export type CurrencyResponseItem = {
+    cc: string,
+    exchangedate: string,
+    r030: number,
+    rate: number,
+    txt: string
 }
 
 export type Price = {
@@ -31,6 +40,11 @@ export type Price = {
 export type DataLine = {
     date: string,
     price: number
+}
+
+export type Seria = {
+    name: Currency,
+    data: DataLine[]
 }
 
 export type WindowSize = {

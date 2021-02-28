@@ -18,6 +18,7 @@ export default class Chart extends Component<ChartData, State> {
     // Before the component mounts, we initialise our state
     componentWillMount() {
         this.updateChartData(this.props.cropName);
+        this.props.updateCrop(this.props.cropName);
     }
 
     async updateChartData(crop: Crop): Promise<void> {

@@ -53,8 +53,9 @@ export type WindowSize = {
 }
 
 export type ChartData = {
-    windowSize: WindowSize
-    cropName: Crop
+    windowSize: WindowSize,
+    cropName: Crop,
+    updateCrop: (crop: Crop) => void
 }
 
 export enum SupportedLanguages {

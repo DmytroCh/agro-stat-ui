@@ -1,8 +1,20 @@
 .side-bar {
-    background-color: white;
-    height: 100%;
-    border-right: 2px groove rgb(214, 214, 214);
-    top:0px;
-    padding: 10px;
     position: absolute;
+    display: flex;
+    top:0px;
+    height: 100%;
+
+
+    .filters {
+        background-color: white;
+        border-right: 2px groove rgb(214, 214, 214);
+        padding: 10px;
+        transition: 1s;
+    }
+
+
+    .hidden {
+        display: none;
+    }
 }
+

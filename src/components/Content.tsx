@@ -41,14 +41,13 @@ export default class Content extends Component<Props, State> {
         path: window.location.pathname,
         activeCrop: Crop.sunflower,
         range: {
-            start: new Date(), // now
-            end: new Date(new Date().setFullYear(new Date().getFullYear() - 1)) // one year ago from now
+            start: new Date(new Date().setFullYear(new Date().getFullYear() - 1)), // one year ago from now
+            end: new Date() // now
         }
     }
     
     componentDidMount() {
-        this.updateWindowSize()
-        this.updateChartData(this.state.activeCrop, this.state.range);
+        this.updateWindowSize();
         // listener for screen size changes
         window.addEventListener('resize', this.updateWindowSize.bind(this))
     }
@@ -100,14 +99,15 @@ export default class Content extends Component<Props, State> {
             // two dates were selected
             if (range.length === 2) {
                 this.setState(() => {
+                    const newRange = {
+                        start: range[0],
+                        end: range[1]
+                    }
+                    this.updateChartData(this.state.activeCrop, newRange);
                     return {
-                        range: {
-                            start: range[0],
-                            end: range[1]
-                        }
+                        range: newRange
                     }
                 })
-                this.updateChartData(this.state.activeCrop, this.state.range);
             }
         }
     }

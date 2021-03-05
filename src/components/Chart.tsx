@@ -1,40 +1,14 @@
 import { Component } from 'react'; // let's also import Component
 import { CartesianGrid, Line, LineChart, Tooltip, XAxis, YAxis } from 'recharts'
-import { getChartData, getExchangeRate } from '../Model/requests'
-import { ChartData, Crop, Currency, Seria } from '../Model/types'
+import { ChartData } from '../Model/types'
 
-interface State {
-    series: Seria[]
-}
 
-export default class Chart extends Component<ChartData, State> {
-    state = {
-        series: [{
-            name: Currency.UAH,
-            data: []
-        }]
-    }
+
+export default class Chart extends Component<ChartData> {
 
     // Before the component mounts, we initialise our state
     componentWillMount() {
-        this.updateChartData(this.props.cropName);
         this.props.updateCrop(this.props.cropName);
-    }
-
-    async updateChartData(crop: Crop): Promise<void> {
-        const response = await getChartData(crop);
-        const currencyResponse = await getExchangeRate(response, Currency.USD);
-        this.setState((prevState) => {
-            return {
-                series: [{
-                    name: Currency.UAH,
-                    data: response
-                }, {
-                    name: Currency.USD,
-                    data: currencyResponse
-                }]
-            }
-        });
     }
 
     render() {
@@ -46,7 +20,7 @@ export default class Chart extends Component<ChartData, State> {
                 <YAxis yAxisId="left" width={35} />
                 <YAxis yAxisId="right" orientation="right" width={30} />
                 <Tooltip formatter={ (value, name, props) => value }/>
-                {this.state.series.map((s, i) => {
+                {this.props.series.map((s, i) => {
                     return (
                         <Line
                             type="monotone"

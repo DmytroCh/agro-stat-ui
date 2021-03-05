@@ -1,15 +1,17 @@
 import axios from 'axios'
 import { currencyToChartData, responseToChartData } from './dataForCharts';
-import { Crop, Currency, DataLine } from './types'
+import { Crop, Currency, DataLine, Range } from './types'
 
 const SERVER_URL = 'http://vmi473672.contaboserver.net:8080'
 const BANK_SERVER_URL = 'https://bank.gov.ua'
 
-export async function getChartData(crop: Crop): Promise<DataLine[]> {
+export async function getChartData(crop: Crop, range: Range): Promise<DataLine[]> {
     try{
         const response = await axios.get(`${SERVER_URL}/prices`, {
             params: {
-                crop: crop
+                crop: crop,
+                start: range.start.toISOString().split('T')[0],
+                end: range.end.toISOString().split('T')[0]
             }
         });
         return responseToChartData(response.data);

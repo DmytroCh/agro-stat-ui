@@ -107,6 +107,7 @@ export default class Content extends Component<Props, State> {
                         }
                     }
                 })
+                this.updateChartData(this.state.activeCrop, this.state.range);
             }
         }
     }

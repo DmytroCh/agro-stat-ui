@@ -1,36 +1,41 @@
 .loading-screen {
-    display: flex;
-    height: 100vh;
-    align-items: center;
-    justify-content: center;
-    
-    @keyframes arrows {
-        0%,
-        100% {
-          color: black;
-          transform: translateY(0);
-        }
-        50% {
-          color: #3AB493;
-          transform: translateY(20px);
-        }
-      }
-      
-      span {
-        --delay: 0s;
-        animation: arrows 1s var(--delay) infinite ease-in;
-      }
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
 
-    .one {
-        --delay: 0.1s
+  @keyframes arrows {
+
+    0%,
+    100% {
+      color: black;
+      transform: translateY(0);
     }
-    .two {
-        --delay: 0.3s
+
+    50% {
+      color: #3AB493;
+      transform: translateY(20px);
     }
-    .three {
-        --delay: 0.4s
-    }
-    .four {
-        --delay: 0.5s
-    }
+  }
+
+  span {
+    --delay: 0s;
+    animation: arrows 1s var(--delay) infinite ease-in;
+  }
+
+  .one {
+    --delay: 0.1s
+  }
+
+  .two {
+    --delay: 0.3s
+  }
+
+  .three {
+    --delay: 0.4s
+  }
+
+  .four {
+    --delay: 0.5s
+  }
 }

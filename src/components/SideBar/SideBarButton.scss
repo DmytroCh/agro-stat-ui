@@ -1,0 +1,87 @@
+.side-bar-button {
+    height: 100%;
+    width: 50px;
+    margin: auto;
+    position: relative;
+    padding: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.3;
+
+
+    .arrow {
+        border: solid black;
+        border-width: 0 3px 3px 0;
+        display: inline-block;
+        height: 15px;
+        width: 15px;
+    }
+
+    .left {
+        transform: rotate(135deg);
+        -webkit-transform: rotate(135deg);
+        margin-left: 6px;
+
+    }
+
+    .right {
+        transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg);
+        margin-right: 6px;
+    }
+}
+
+.side-bar-button:hover {
+    opacity: 1;
+    cursor: pointer;
+    -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.6), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.6), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.6), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+
+@keyframes blinking {
+    0% {
+        opacity: 1;
+        -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.6), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+        -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.6), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.6), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+        transform: scale(1.5);
+    }
+
+    40% {
+        opacity: 0.3;
+        transform: scale(1);
+    }
+
+    41% {
+        opacity: 1;
+        -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.6), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+        -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.6), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.6), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+        transform: scale(1.5);
+    }
+
+    80% {
+        opacity: 0.3;
+        transform: scale(1);
+    }
+
+    81% {
+        opacity: 1;
+        -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.6), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+        -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.6), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.6), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+        transform: scale(1.5);
+    }
+
+    100% {
+        opacity: 0.3;
+        transform: scale(1);
+    }
+}
+
+.blinking {
+    animation: blinking 5s;
+    animation-delay: 3s;
+}

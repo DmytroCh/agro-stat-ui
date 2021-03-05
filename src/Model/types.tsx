@@ -52,9 +52,17 @@ export type WindowSize = {
     height: number
 }
 
+export type Range = {
+    start: Date,
+    end: Date
+}
+
 export type ChartData = {
-    windowSize: WindowSize
-    cropName: Crop
+    windowSize: WindowSize,
+    cropName: Crop,
+    range: Range,
+    series: Seria[],
+    updateCrop: (crop: Crop) => void
 }
 
 export enum SupportedLanguages {

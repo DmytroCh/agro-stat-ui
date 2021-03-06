@@ -18,21 +18,21 @@ export const MenuCharts = ({ t, activeItem, updateActiveItem }: Props) => {
                         <Dropdown.Menu>
                             <Dropdown.Item
                                 name='2-nd-class'
-                                text={ t('wheat_2nd') }
+                                text={ t('wheat_2') }
                                 href='/wheat-2'
                                 active={activeItem === '2-nd-class'}
                                 onClick={updateActiveItem}
                             />
                             <Dropdown.Item
                                 name='3-rd-class'
-                                text={ t('wheat_3rd') }
+                                text={ t('wheat_3') }
                                 href="/wheat-3"
                                 active={activeItem === '3-rd-class'}
                                 onClick={updateActiveItem}
                             />
                             <Dropdown.Item
                                 name='4-th-class'
-                                text={ t('wheat_4th') }
+                                text={ t('wheat_4') }
                                 href="/wheat-4"
                                 active={activeItem === '4-th-class'}
                                 onClick={updateActiveItem}

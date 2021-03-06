@@ -201,6 +201,7 @@ export default class Content extends Component<Props, State> {
                         cropName={this.state.activeCrop}
                         i18n={this.props.i18n}
                         updateRange={this.setDatesRange}
+                        initRange={this.state.range}
                     />
                 }
             </div>

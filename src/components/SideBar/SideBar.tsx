@@ -4,7 +4,7 @@ import React, { Component } from 'react'; // let's also import Component
 import SemanticDatepicker from 'react-semantic-ui-datepickers';
 import 'react-semantic-ui-datepickers/dist/react-semantic-ui-datepickers.css';
 import { Header } from 'semantic-ui-react';
-import { Crop } from '../../Model/types';
+import { Crop, Range } from '../../Model/types';
 import { TFunction } from 'i18next';
 import SideBarButton from './SideBarButton';
 import { SemanticDatepickerProps } from 'react-semantic-ui-datepickers/dist/types';
@@ -16,7 +16,8 @@ interface State {
 interface Props {
     cropName: Crop,
     updateRange(event: React.SyntheticEvent | undefined, data: SemanticDatepickerProps): void,
-    i18n: TFunction
+    i18n: TFunction,
+    initRange: Range
 }
 
 export default class Content extends Component<Props, State> {
@@ -46,6 +47,7 @@ export default class Content extends Component<Props, State> {
                         onChange={this.props.updateRange}
                         datePickerOnly={ true }
                         type='range'
+                        value={[this.props.initRange.start, this.props.initRange.end]}
                     />
                 </div>
                 <SideBarButton isVisible={this.state.isVisible} onClick={this.setVisibility}></SideBarButton>

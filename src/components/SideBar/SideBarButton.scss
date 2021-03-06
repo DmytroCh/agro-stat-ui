@@ -46,33 +46,36 @@
         -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.6), 0 0 40px rgba(0, 0, 0, 0.1) inset;
         -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.6), 0 0 40px rgba(0, 0, 0, 0.1) inset;
         box-shadow: 0 1px 4px rgba(0, 0, 0, 0.6), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-        transform: scale(1.5);
+        transform: scale(2, 1);
+        transform-origin:bottom left;
     }
 
-    40% {
+    33% {
         opacity: 0.3;
         transform: scale(1);
     }
 
-    41% {
+    34% {
         opacity: 1;
         -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.6), 0 0 40px rgba(0, 0, 0, 0.1) inset;
         -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.6), 0 0 40px rgba(0, 0, 0, 0.1) inset;
         box-shadow: 0 1px 4px rgba(0, 0, 0, 0.6), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-        transform: scale(1.5);
+        transform: scale(2, 1);
+        transform-origin:bottom left;
     }
 
-    80% {
+    66% {
         opacity: 0.3;
         transform: scale(1);
     }
 
-    81% {
+    67% {
         opacity: 1;
         -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.6), 0 0 40px rgba(0, 0, 0, 0.1) inset;
         -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.6), 0 0 40px rgba(0, 0, 0, 0.1) inset;
         box-shadow: 0 1px 4px rgba(0, 0, 0, 0.6), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-        transform: scale(1.5);
+        transform: scale(2, 1);
+        transform-origin:bottom left;
     }
 
     100% {
@@ -82,6 +85,6 @@
 }
 
 .blinking {
-    animation: blinking 5s;
+    animation: blinking 3s;
     animation-delay: 3s;
 }

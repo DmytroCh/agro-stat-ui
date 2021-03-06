@@ -1,0 +1,32 @@
+@media only screen and (max-width: 500px) {
+    .side-bar {
+        position: relative;
+        display: flex;
+        height: auto;
+        width: 100%;
+
+        .filters {
+            background-color: white;
+            border-right: none;
+            padding: 10px;
+            width: 100%;
+        }
+
+        .hidden {
+            display: inline;
+
+            .field {
+                width: 100%;
+
+                .input {
+                    width: 100%;
+                }
+            }
+
+            .clndr-calendars-wrapper {
+                grid-template-columns: 100%;
+            }
+        }
+    
+    }
+}

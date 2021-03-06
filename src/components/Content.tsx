@@ -115,6 +115,14 @@ export default class Content extends Component<Props, State> {
     render() {
         return (
             <div id='content'>
+                {
+                    this.state.path === "/about-us" ? null : <SideBar
+                        cropName={this.state.activeCrop}
+                        i18n={this.props.i18n}
+                        updateRange={this.setDatesRange}
+                        initRange={this.state.range}
+                    />
+                }
                 <Switch>
                     <Route exact path="/">
                         <Redirect to="/about-us" />
@@ -196,14 +204,6 @@ export default class Content extends Component<Props, State> {
                     </Route>
                 </Switch>
 
-                {
-                    this.state.path === "/about-us" ? null : <SideBar
-                        cropName={this.state.activeCrop}
-                        i18n={this.props.i18n}
-                        updateRange={this.setDatesRange}
-                        initRange={this.state.range}
-                    />
-                }
             </div>
         )
     }

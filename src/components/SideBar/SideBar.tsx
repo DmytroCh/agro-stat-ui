@@ -1,4 +1,6 @@
 import './SideBar.scss';
+import './SideBarMobile.scss';
+
 
 import React, { Component } from 'react'; // let's also import Component
 import SemanticDatepicker from 'react-semantic-ui-datepickers';

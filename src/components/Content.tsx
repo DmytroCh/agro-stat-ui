@@ -116,12 +116,12 @@ export default class Content extends Component<Props, State> {
         return (
             <div id='content'>
                 {
-                    this.state.path === "/about-us" ? null : <SideBar
+                    Object.values(Crop).includes(this.state.path.split('/')[1] as any) ? <SideBar
                         cropName={this.state.activeCrop}
                         i18n={this.props.i18n}
                         updateRange={this.setDatesRange}
                         initRange={this.state.range}
-                    />
+                    /> : null
                 }
                 <Switch>
                     <Route exact path="/">
@@ -130,7 +130,7 @@ export default class Content extends Component<Props, State> {
                     <Route exact path="/about-us">
                         <AboutUs i18n={this.props.i18n} />
                     </Route>
-                    <Route exact path="/wheat-2">
+                    <Route exact path={`/${Crop.wheat2}`}>
                         <Chart windowSize={this.state.size}
                             cropName={Crop.wheat2}
                             range={this.state.range}
@@ -138,7 +138,7 @@ export default class Content extends Component<Props, State> {
                             series={this.state.series}
                         />
                     </Route>
-                    <Route exact path="/wheat-3">
+                    <Route exact path={`/${Crop.wheat3}`}>
                         <Chart windowSize={this.state.size}
                             cropName={Crop.wheat3}
                             range={this.state.range}
@@ -146,7 +146,7 @@ export default class Content extends Component<Props, State> {
                             series={this.state.series}
                         />
                     </Route>
-                    <Route exact path="/wheat-4">
+                    <Route exact path={`/${Crop.wheat4}`}>
                         <Chart windowSize={this.state.size}
                             cropName={Crop.wheat4}
                             range={this.state.range}
@@ -154,7 +154,7 @@ export default class Content extends Component<Props, State> {
                             series={this.state.series}
                         />
                     </Route>
-                    <Route exact path="/sunflowers">
+                    <Route exact path={`/${Crop.sunflower}`}>
                         <Chart windowSize={this.state.size}
                             cropName={Crop.sunflower}
                             range={this.state.range}
@@ -162,7 +162,7 @@ export default class Content extends Component<Props, State> {
                             series={this.state.series}
                         />
                     </Route>
-                    <Route exact path="/rye">
+                    <Route exact path={`/${Crop.rye}`}>
                         <Chart windowSize={this.state.size}
                             cropName={Crop.rye}
                             range={this.state.range}
@@ -170,7 +170,7 @@ export default class Content extends Component<Props, State> {
                             series={this.state.series}
                         />
                     </Route>
-                    <Route exact path="/corn">
+                    <Route exact path={`/${Crop.corn}`}>
                         <Chart windowSize={this.state.size}
                             cropName={Crop.corn}
                             range={this.state.range}
@@ -178,7 +178,7 @@ export default class Content extends Component<Props, State> {
                             series={this.state.series}
                         />
                     </Route>
-                    <Route exact path="/barley">
+                    <Route exact path={`/${Crop.barley}`}>
                         <Chart windowSize={this.state.size}
                             cropName={Crop.barley}
                             range={this.state.range}
@@ -186,7 +186,7 @@ export default class Content extends Component<Props, State> {
                             series={this.state.series}
                         />
                     </Route>
-                    <Route exact path="/soybean">
+                    <Route exact path={`/${Crop.soybean}`}>
                         <Chart windowSize={this.state.size}
                             cropName={Crop.soybean}
                             range={this.state.range}
@@ -194,7 +194,7 @@ export default class Content extends Component<Props, State> {
                             series={this.state.series}
                         />
                     </Route>
-                    <Route exact path="/buckwheat">
+                    <Route exact path={`/${Crop.buckwheat}`}>
                         <Chart windowSize={this.state.size}
                             cropName={Crop.buckwheat}
                             range={this.state.range}

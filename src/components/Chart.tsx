@@ -13,7 +13,7 @@ export default class Chart extends Component<ChartData> {
 
     render() {
         return (
-            <LineChart width={this.props.windowSize.width} height={this.props.windowSize.height}
+            <LineChart width={this.props.windowSize.width} height={this.props.windowSize.height - 20}
                 margin={{ top: 5, right: 10, left: 15, bottom: 5 }}>
                 <CartesianGrid strokeDasharray="3 3" />
                 <XAxis dataKey="date" allowDuplicatedCategory={false} />

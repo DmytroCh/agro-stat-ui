@@ -128,7 +128,7 @@ export default class Content extends Component<Props, State> {
                         <Redirect to="/about-us" />
                     </Route>
                     <Route exact path="/about-us">
-                        <AboutUs i18n={this.props.i18n} />
+                        <AboutUs i18n={this.props.i18n } windowSize={ this.state.size }/>
                     </Route>
                     <Route exact path={`/${Crop.wheat2}`}>
                         <Chart windowSize={this.state.size}

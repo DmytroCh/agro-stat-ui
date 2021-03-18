@@ -23,9 +23,9 @@ const Block:React.FunctionComponent<Props> = (props) => {
             <h2 className='title'>
                 { props.title }
             </h2>
-            <span>
+            <p>
                 { props.text }
-            </span>
+            </p>
         </div>
         { props.position === Position.right ? <img src={ props.image } alt={ props.alt } />: null }
     </div>

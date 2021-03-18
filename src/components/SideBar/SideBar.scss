@@ -1,8 +1,12 @@
+/* heigh of semantic ui menu. Is it correct? */
+$nav_height: calc(2.85714286em + 12px);
+
 .side-bar {
     position: absolute;
     display: flex;
     top:0px;
-    height: 100%;
+    height: calc(96vh - #{$nav_height});
+    margin-top: #{$nav_height};
     z-index: 1;
 
     .filters {
@@ -15,6 +19,12 @@
 
     .hidden {
         display: none;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .side-bar {
+        margin-top: 0;
     }
 }
 

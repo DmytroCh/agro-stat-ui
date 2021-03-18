@@ -1,7 +1,8 @@
 /* heigh of semantic ui menu. Is it correct? */
-$nav_height: calc(2.85714286em + 24px);
+$nav_height: calc(2.85714286em + 12px);
 
 #content {
-    height: calc(100vh - #{$nav_height});
+    padding-top: calc(#{$nav_height});
+    height: calc(99vh - #{$nav_height});
     position: relative;
 }

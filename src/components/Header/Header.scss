@@ -4,4 +4,7 @@ div.ui.inverted.segment {
     padding: 7px;
     margin: 0;
     max-height: calc(2.85714286em + 14px); // min-height of inner element + 2 * padding
+    min-width: 100%;
+    position: fixed;
+    z-index: 5;
 }

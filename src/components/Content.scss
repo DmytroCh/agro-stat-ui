@@ -3,6 +3,6 @@ $nav_height: calc(2.85714286em + 12px);
 
 #content {
     padding-top: calc(#{$nav_height});
-    height: calc(99vh - #{$nav_height});
+    height: calc(100vh - #{$nav_height});
     position: relative;
 }

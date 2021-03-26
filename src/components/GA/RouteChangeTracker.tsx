@@ -8,13 +8,10 @@ interface Props {
 }
 
 const RouteChangeTracker:React.FunctionComponent<Props> = (props) => {
-    console.log("History:", props.history);
-        ReactGA.set({ page: props.history.location.pathname });
-        ReactGA.pageview(props.history.location.pathname);
+    ReactGA.set({ page: props.history.location.pathname });
+    ReactGA.pageview(props.history.location.pathname);
 
-    return <div></div>;
-  
+    return <div></div>;  
 }
-
 
 export default withRouter(RouteChangeTracker);

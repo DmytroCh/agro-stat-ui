@@ -5,12 +5,12 @@ import { useTranslation } from 'react-i18next';
 
 
 function App() {
-  return (
-    <div className="app">
-      <Header i18n={ useTranslation().t }/>
-      <Content i18n={ useTranslation().t }/>
-    </div>
-  );
+    return (
+        <div className="app">
+            <Header i18n={useTranslation().t} />
+            <Content i18n={useTranslation().t} />
+        </div>
+    );
 }
 
 export default App;

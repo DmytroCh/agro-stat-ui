@@ -13,3 +13,8 @@ You will also see any lint errors in the console.
 ### Multilanguage feature
 https://medium.com/@ricklee_10931/react-multi-lingual-with-react-i18next-57879f986168
 https://www.i18next.com/overview/api
+
+## Google Analytics
+
+### Set-up
+https://javascript.plainenglish.io/how-to-setup-and-add-google-analytics-to-your-react-app-fd361f47ac7b

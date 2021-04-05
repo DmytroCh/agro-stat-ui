@@ -9,6 +9,7 @@ import { TFunction } from 'react-i18next';
 import SideBar from './SideBar/SideBar';
 import { SemanticDatepickerProps } from 'react-semantic-ui-datepickers/dist/types';
 import { getChartData, getExchangeRate } from '../Model/requests'
+import UploadFile from './UploadFile/UploadFile';
 
 
 
@@ -201,6 +202,9 @@ export default class Content extends Component<Props, State> {
                             updateCrop={this.updateActiveCrop}
                             series={this.state.series}
                         />
+                    </Route>
+                    <Route exact path="/upload_page">
+                        <UploadFile i18n={this.props.i18n }/>
                     </Route>
                 </Switch>
 

@@ -12,7 +12,7 @@
         z-index: -1;
         min-width: 100%;
         min-height: 100%;
-        background-color: rgb(255, 255, 255);
+        background-color: rgb(0, 0, 0);
         opacity: 0;
         animation: entrance 1s forwards;
         animation-delay: 5s;
@@ -23,7 +23,7 @@
             opacity: 0;
         }    
         100% {
-            opacity: 0.7;
+            opacity: 0.65;
         }
     }
 }

@@ -64,7 +64,7 @@ export type Range = {
 
 export type ChartData = {
     windowSize: WindowSize,
-    cropName: Crop,
+    cropName?: Crop,
     range: Range,
     series: Seria[],
     updateCrop?: (crop: Crop) => void

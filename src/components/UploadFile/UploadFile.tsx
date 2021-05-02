@@ -1,3 +1,5 @@
+import './UploadFile.scss';
+
 import React, { useCallback } from 'react';
 import { TFunction } from 'i18next';
 import {useDropzone} from 'react-dropzone'
@@ -35,10 +37,17 @@ const UploadFile:React.FunctionComponent<Props> = (props) => {
 
 
     return (
+      <div className='upload-page'>
         <div {...getRootProps({className: 'dropzone'})}>
-            <input {...getInputProps()} />
-            <p>Drag 'n' drop some files here, or click to select files</p>
+            <div className='active-zone'>
+              <input {...getInputProps()} />
+              <p>Drag &#38; drop or click to select files</p>
+            </div>
         </div>
+        <div className='description'>
+          Here should be information how to use it.
+        </div>
+      </div>
     )
 }
 

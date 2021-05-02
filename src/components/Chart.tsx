@@ -5,11 +5,36 @@ import { ChartData } from '../Model/types'
 
 
 export default class Chart extends Component<ChartData> {
-
+    state = {
+        secondAxis: false
+    }
     // Before the component mounts, we initialise our state
     componentWillMount() {
-        if(this.props.updateCrop) // this should be change
+        if(this.props.updateCrop && this.props.cropName){ // this should be change
+            this.setState((prevState) => {
+                return {
+                    secondAxis: true
+                }
+            });
             this.props.updateCrop(this.props.cropName);
+        }
+    }
+
+    getAxisId = (i:number): string => {
+        if(this.state.secondAxis){
+            return i % 2 > 0 ? "right" : "left";
+        }else{
+            return "left";
+        }
+    }
+
+    getLineColor = (i: number): string => {
+        if(this.state.secondAxis){
+            return i % 2 > 0 ? "#82ca9d" : "#0066ff";
+        }else{
+            return `#${Math.floor(Math.random()*16777215).toString(16)}`;
+        }
+        
     }
 
     render() {
@@ -19,7 +44,7 @@ export default class Chart extends Component<ChartData> {
                 <CartesianGrid strokeDasharray="3 3" />
                 <XAxis dataKey="date" allowDuplicatedCategory={false} />
                 <YAxis yAxisId="left" width={35} />
-                <YAxis yAxisId="right" orientation="right" width={30} />
+                {this.state.secondAxis ? <YAxis yAxisId="right" orientation="right" width={30}/> : null}
                 <Tooltip formatter={ (value, name, props) => value }/>
                 {this.props.series.map((s, i) => {
                     return (
@@ -28,8 +53,8 @@ export default class Chart extends Component<ChartData> {
                             dataKey="price"
                             data={s.data}
                             name={s.name}
-                            yAxisId={i % 2 > 0 ? "right" : "left"}
-                            stroke={i % 2 > 0 ? "#82ca9d" : "#0066ff"}
+                            yAxisId={this.getAxisId(i)}
+                            stroke={this.getLineColor(i)}
                         />
                     )
                 })}

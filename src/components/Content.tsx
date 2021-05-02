@@ -224,7 +224,6 @@ export default class Content extends Component<Props, State> {
                     </Route>
                     <Route exact path={`/custom-data`}>
                         <Chart windowSize={this.state.size}
-                            cropName={Crop.wheat2}
                             range={this.state.range}
                             series={this.state.series}
                         />

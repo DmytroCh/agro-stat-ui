@@ -47,6 +47,11 @@ export type Seria = {
     data: DataLine[]
 }
 
+export type CustomSeria = {
+    name: string,
+    data: DataLine[]
+}
+
 export type WindowSize = {
     width: number,
     height: number
@@ -62,7 +67,7 @@ export type ChartData = {
     cropName: Crop,
     range: Range,
     series: Seria[],
-    updateCrop: (crop: Crop) => void
+    updateCrop?: (crop: Crop) => void
 }
 
 export enum SupportedLanguages {

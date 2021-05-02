@@ -8,7 +8,8 @@ export default class Chart extends Component<ChartData> {
 
     // Before the component mounts, we initialise our state
     componentWillMount() {
-        this.props.updateCrop(this.props.cropName);
+        if(this.props.updateCrop) // this should be change
+            this.props.updateCrop(this.props.cropName);
     }
 
     render() {

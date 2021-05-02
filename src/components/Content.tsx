@@ -3,7 +3,7 @@ import './Content.scss';
 import React, { Component } from 'react'; // let's also import Component
 import { Redirect, Route, Switch } from 'react-router-dom';
 import Chart from './Chart';
-import { WindowSize, Crop, Range, Currency, Seria } from '../Model/types';
+import { WindowSize, Crop, Range, Currency, Seria, CustomSeria } from '../Model/types';
 import AboutUs from './AboutUs/AboutUs';
 import { TFunction } from 'react-i18next';
 import SideBar from './SideBar/SideBar';
@@ -19,10 +19,11 @@ import UploadFile from './UploadFile/UploadFile';
 
 interface State {
     size: WindowSize,
-    series: Seria[],
+    series: Seria[] | CustomSeria[],
     path: string,
     activeCrop: Crop,
-    range: Range
+    range: Range,
+    isCustomData: Boolean
 }
 
 interface Props {
@@ -44,7 +45,8 @@ export default class Content extends Component<Props, State> {
         range: {
             start: new Date(new Date().setFullYear(new Date().getFullYear() - 1)), // one year ago from now
             end: new Date() // now
-        }
+        },
+        isCustomData: false
     }
     
     componentDidMount() {
@@ -85,6 +87,15 @@ export default class Content extends Component<Props, State> {
         });
     }
 
+    updateChartCustomData = (series: CustomSeria[]): void => {
+        this.setState((prevState) => {
+            return {
+                series: series,
+                isCustomData: !prevState.isCustomData
+            }
+        }); 
+    }
+
     updateActiveCrop = (crop: Crop): void => {
         this.setState(() => {
             return {
@@ -93,6 +104,7 @@ export default class Content extends Component<Props, State> {
         })
         this.updateChartData(crop, this.state.range);
     }
+
 
     setDatesRange = (event: React.SyntheticEvent | undefined, data: SemanticDatepickerProps) => {
         if (data.value) {
@@ -204,7 +216,18 @@ export default class Content extends Component<Props, State> {
                         />
                     </Route>
                     <Route exact path="/upload_page">
-                        <UploadFile i18n={this.props.i18n }/>
+                        <UploadFile 
+                            i18n={this.props.i18n}
+                            updateCustomData={this.updateChartCustomData}
+                        />
+                        {this.state.isCustomData ? <Redirect to="/custom-data"/> : null}
+                    </Route>
+                    <Route exact path={`/custom-data`}>
+                        <Chart windowSize={this.state.size}
+                            cropName={Crop.wheat2}
+                            range={this.state.range}
+                            series={this.state.series}
+                        />
                     </Route>
                 </Switch>
 

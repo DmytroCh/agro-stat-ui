@@ -21,5 +21,6 @@
     "block_3_text": "We are someonce who want to increase yours incomes!",
     "block_4_title": "Where data comes from?",
     "block_4_text": "We pull data from official ukrainian goverment statistic portal : https://agro.me.gov.ua/",
-    "data_range_label": "Data range"
+    "data_range_label": "Data range",
+    "drag_and_drop_file": "Drag & drop or click here to select files"
 }

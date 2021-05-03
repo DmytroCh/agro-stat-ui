@@ -21,5 +21,6 @@
     "block_3_text": "Jesteśmy kimś kto chce Ci pomóc zwiększyć twoje zyski!",
     "block_4_title": "Skąd są dane?",
     "block_4_text": "Pobieramy dane z oficjalnej strony urzędu statystycznego Ukrainy: https://agro.me.gov.ua/",
-    "data_range_label": "Zakres danych"
+    "data_range_label": "Zakres danych",
+    "drag_and_drop_file": "Przeciągnij i puść bądź kliknij aby wybrać plik"
 }

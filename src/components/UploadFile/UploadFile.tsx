@@ -3,7 +3,7 @@ import './UploadFile.scss';
 import React, { useCallback } from 'react';
 import { TFunction } from 'i18next';
 import {useDropzone} from 'react-dropzone'
-import { parseFileToChartData, validateFileType } from '../../Model/parseCustomData';
+import { isXlsxFile, parseFileToChartData, validateFileType } from '../../Model/parseCustomData';
 import { CustomSeria } from '../../Model/types';
 
 
@@ -28,7 +28,12 @@ const UploadFile:React.FunctionComponent<Props> = (props) => {
               //Show message we don't support this file type
             }
           }
-          reader.readAsText(file);
+          
+          if(isXlsxFile(file.type)){
+              reader.readAsBinaryString(file);
+          }else{
+              reader.readAsText(file);
+          }          
         })
         
       }, [props])
@@ -41,7 +46,7 @@ const UploadFile:React.FunctionComponent<Props> = (props) => {
         <div {...getRootProps({className: 'dropzone'})}>
             <div className='active-zone'>
               <input {...getInputProps()} />
-              <p>Drag &#38; drop or click to select files</p>
+              <p>{props.i18n('drag_and_drop_file')}</p>
             </div>
         </div>
         <div className='description'>

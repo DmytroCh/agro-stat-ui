@@ -32,4 +32,39 @@
             color: rgba(104, 104, 104, 1);
         }
     }
+
+    .description{
+        padding: 10px;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        column-gap: 20px;
+        row-gap: 50px;
+
+        img{
+            margin: auto;
+        }
+
+        .text{
+            font-size: 1.5rem;
+            text-align: justify;
+
+            ul{
+                li{
+                    margin-bottom: 10px;
+                }
+            }
+        }
+    }
+
+    @media only screen and (max-width: 800px) {
+        .description {
+            grid-template-columns: 1fr;
+
+            img{
+                grid-row-start: 1;
+                grid-row-end: 1;
+            }
+        }
+    }
 }

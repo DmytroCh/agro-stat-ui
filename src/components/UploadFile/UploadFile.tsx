@@ -5,6 +5,7 @@ import { TFunction } from 'i18next';
 import {useDropzone} from 'react-dropzone'
 import { isXlsxFile, parseFileToChartData, validateFileType } from '../../Model/parseCustomData';
 import { CustomSeria } from '../../Model/types';
+import image_file_example from '../../images/custom_file_example.png';
 
 
 interface Props {
@@ -50,7 +51,17 @@ const UploadFile:React.FunctionComponent<Props> = (props) => {
             </div>
         </div>
         <div className='description'>
-          Here should be information how to use it.
+          <div className='text'>
+            <h2>{props.i18n("upload_description_title")}</h2>
+            <h3>{props.i18n("upload_description_formats")}: .csv, .xlsx, .xls</h3>
+            <ul>
+              <li>{props.i18n("upload_description_rule_1")}</li>
+              <li>{props.i18n("upload_description_rule_2")}</li>
+              <li>{props.i18n("upload_description_rule_3")}</li>
+              <li>{props.i18n("upload_description_rule_4")}</li>
+          </ul>
+          </div>
+          <img src={image_file_example} alt="File example"/>
         </div>
       </div>
     )

@@ -22,5 +22,11 @@
     "block_4_title": "Where data comes from?",
     "block_4_text": "We pull data from official ukrainian goverment statistic portal : https://agro.me.gov.ua/",
     "data_range_label": "Data range",
-    "drag_and_drop_file": "Drag & drop or click here to select files"
+    "drag_and_drop_file": "Drag & drop or click here to select files",
+    "upload_description_title": "File requirements",
+    "upload_description_formats": "Supported formats",
+    "upload_description_rule_1": "First column contains values for chart's X axis",
+    "upload_description_rule_2": "Rest of columns contains series data. There are no limit related to number of lines. Cells must contain numbers in string or number formats.",
+    "upload_description_rule_3": "Use dots instead of commas for floating point numbers",
+    "upload_description_rule_4": "Use commas instead of semicolons for columns separations (.csv format)"
 }

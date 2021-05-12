@@ -1,5 +1,6 @@
 import { CustomSeria, DataLine } from "./types";
 import * as XLSX from 'xlsx';
+import papa from 'papaparse';
 
 
 const acceptedFileTypes = [
@@ -40,33 +41,24 @@ export const parseFileToChartData = (fileStr: string, type: string): CustomSeria
 }
 
 const parseCSVFile = (fileStr: string): CustomSeria[] => {
-    // warning this methog handle USA/UK CSV format with 
-    // , as column separator and
-    // . decimal separator
-    // There is also European CSV format with
-    // ; as column separator and
-    // , as decimal separator
-    // how to differentiate them?
-    const lines = fileStr.split('\n');
-    const headersLength = lines[0].split(",").length;
-    let matrix = lines.map(line => {
-        const columns = line.split(",");
-        if(columns.length > headersLength){ //if user add more data in row then series in header
-            return columns.slice(0, headersLength);
+    let matrix = papa.parse(fileStr).data as any[];
+    const headersLength = matrix[0].length;
+    matrix = matrix.map(row => {
+        if(row.length > headersLength){ //if user add more data in row then series in header
+            return row.slice(0, headersLength);
         }else {
-            return columns;
-        }
-    
-    })
+            return row;
+        }    
+    });
+
     matrix = matrix.filter(arr => arr.length > 1);
     console.log(".csv data parsing result", matrix);
-    const result: CustomSeria[] = matrix[0].slice(1).map((seriaName, i) => {
+    const result: CustomSeria[] = matrix[0].slice(1).map((seriaName: any, i: number) => {
         return {
             name: seriaName,
             data: generateDataLine(matrix.slice(1), i + 1)
         }
     });
-
     return result;
 }
 

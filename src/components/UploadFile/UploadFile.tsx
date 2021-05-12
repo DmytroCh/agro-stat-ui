@@ -57,8 +57,6 @@ const UploadFile:React.FunctionComponent<Props> = (props) => {
             <ul>
               <li>{props.i18n("upload_description_rule_1")}</li>
               <li>{props.i18n("upload_description_rule_2")}</li>
-              <li>{props.i18n("upload_description_rule_3")}</li>
-              <li>{props.i18n("upload_description_rule_4")}</li>
           </ul>
           </div>
           <img src={image_file_example} alt="File example"/>

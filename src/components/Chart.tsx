@@ -29,10 +29,11 @@ export default class Chart extends Component<ChartData> {
     }
 
     getLineColor = (i: number): string => {
+        const maxColorValue = 16777173; // not 16777215 as it's white - unreadable on white background
         if(this.state.secondAxis){
             return i % 2 > 0 ? "#82ca9d" : "#0066ff";
         }else{
-            return `#${Math.floor(Math.random()*16777215).toString(16)}`;
+            return `#${Math.floor(Math.random() * maxColorValue).toString(16)}`;
         }
         
     }

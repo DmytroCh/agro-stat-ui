@@ -15,8 +15,7 @@ ReactGA.initialize(TRACKING_ID);
 ReactDOM.render(
     <React.StrictMode>
         <BrowserRouter>
-            {//<RouteChangeTracker/>
-            }
+            <RouteChangeTracker/>
             <Suspense fallback={ <LoadingScreen/> }>
                 <App />
             </Suspense>

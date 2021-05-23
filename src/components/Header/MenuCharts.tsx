@@ -83,6 +83,13 @@ export const MenuCharts = ({ t, activeItem, updateActiveItem }: Props) => {
                     active={activeItem === 'buckwheat'}
                     onClick={updateActiveItem}
                 />
+                <Dropdown.Item
+                    name='upload_page'
+                    text={ t('upload_page') }
+                    href={`/upload_page`}
+                    active={activeItem === 'upload_page'}
+                    onClick={updateActiveItem}
+                />
             </Dropdown.Menu>
         </Dropdown>
     )

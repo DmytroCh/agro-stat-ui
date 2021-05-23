@@ -12,6 +12,7 @@
     "barley": "Jęczmień",
     "soybean": "Soja",
     "buckwheat": "Gryka",
+    "upload_page": "Własne dane",
     "block_1_title": "Co robimy?",
     "block_1_text": "Zajmujemy się wizualizacją danych statystycznych związanych z rolnictwem",
     "block_2_title": "Dlaczego to robimy?",
@@ -21,5 +22,12 @@
     "block_4_title": "Skąd są dane?",
     "block_4_text": "Pobieramy dane z oficjalnej strony urzędu statystycznego Ukrainy: https://agro.me.gov.ua/",
     "data_range_label": "Zakres danych",
+    "drag_and_drop_file": "Przeciągnij i puść bądź kliknij aby wybrać plik",
+    "upload_description_title": "Wymagania do pliku",
+    "upload_description_formats": "Wspierane formaty",
+    "upload_description_rule_1": "Pierwsza kolumna zawiera dane dla osi X",
+    "upload_description_rule_2": "Reszta kolumn zawiera dane dla krzywych. Nie ma ograniczenia codo liczby krzywych. Te kolumny muszą zawierać liczby w formacie tekstowym bądź liczbowym.",
+    "upload_description_rule_3": "W przypadku liczb zmiennoprzecinkowych mają być używane kropki zamiast przecinków",
+    "upload_description_rule_4": "Trzeba używać przecinków zamiast średników jako separatora kolumn (dotyczy .csv)",
     "footer_support_title": "Wsparcie"
 }

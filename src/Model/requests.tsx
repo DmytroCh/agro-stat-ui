@@ -2,7 +2,7 @@ import axios from 'axios'
 import { currencyToChartData, responseToChartData } from './dataForCharts';
 import { Crop, Currency, DataLine, Range } from './types'
 
-const SERVER_URL = 'https://api.agro-stats.com'
+const SERVER_URL = 'http://api.agro-stats.com'
 const BANK_SERVER_URL = 'https://bank.gov.ua'
 
 export async function getChartData(crop: Crop, range: Range): Promise<DataLine[]> {
